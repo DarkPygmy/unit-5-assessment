@@ -1,4 +1,5 @@
-
+const Sequelize = require('sequelize')
+const sequelize = new Sequelize('postgres:///unit5')
 
 module.exports = {
     seed: (req, res) => {
