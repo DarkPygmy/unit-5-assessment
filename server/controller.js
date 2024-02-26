@@ -1,5 +1,5 @@
 const Sequelize = require('sequelize')
-const sequelize = new Sequelize('postgres:///unit5')
+const sequelize = new Sequelize('postgres://postgres:Smackback1!@localhost:5432/unit5')
 
 module.exports = {
     seed: (req, res) => {
@@ -12,7 +12,13 @@ module.exports = {
                 name varchar
             );
 
-            *****YOUR CODE HERE*****
+            create table cities (
+                city_id serial primary key,
+                name varchar,
+                rating integer,
+                country_id INTEGER REFERENCES countries(country_id)
+
+            );
 
             insert into countries (name)
             values ('Afghanistan'),
